@@ -1,3 +1,4 @@
+'use client'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
@@ -9,52 +10,52 @@ const LoginPage = () => {
   const form = useForm()
 
   return (
-      <Card className='w-[400px]'>
-        <CardHeader>
-          <CardTitle>
-            ¡Bienvenido! 
-          </CardTitle>
-          <CardDescription>
-            Inicie sesión con su cuenta
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Form {...form}>
-            <FormField 
+    <Card className='w-[400px]'>
+      <CardHeader>
+        <CardTitle>
+          ¡Bienvenido!
+        </CardTitle>
+        <CardDescription>
+          Inicie sesión con su cuenta
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <Form {...form}>
+          <FormField
             control={form.control}
             name='email'
-            render={({field})=> (
+            render={({ field }) => (
               <FormItem>
                 <FormLabel>Correo Electronico</FormLabel>
                 <FormControl>
-                  <Input placeholder='example@mail.com' {...field}/>
+                  <Input placeholder='example@mail.com' {...field} />
                 </FormControl>
-                <FormMessage/>
+                <FormMessage />
               </FormItem>
 
             )}>
-            </FormField>
-            <FormField 
+          </FormField>
+          <FormField
             control={form.control}
             name='password'
-            render={({field})=> (
+            render={({ field }) => (
               <FormItem>
                 <FormLabel>Contraseña</FormLabel>
                 <FormControl>
-                  <Input type='password' {...field}/>
+                  <Input type='password' {...field} />
                 </FormControl>
-                <FormMessage/>
+                <FormMessage />
               </FormItem>
             )}>
-            </FormField>
-          </Form>
-        </CardContent>
-        <CardFooter className='flex items-end justify-end'>
-          <Button>
-            Continuar
-          </Button>
-        </CardFooter>
-      </Card>
+          </FormField>
+        </Form>
+      </CardContent>
+      <CardFooter className='flex items-end justify-end'>
+        <Button>
+          Continuar
+        </Button>
+      </CardFooter>
+    </Card>
   )
 }
 
